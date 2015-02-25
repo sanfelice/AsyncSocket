@@ -5,7 +5,7 @@ using System.Net.Sockets;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace Aviad.Utils.Communication.Core
+namespace Communication.Core
 {
     public class ServerTerminal
     {

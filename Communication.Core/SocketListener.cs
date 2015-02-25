@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Net.Sockets;
 using System.Collections.Generic;
 
-namespace Aviad.Utils.Communication.Core
+namespace Communication.Core
 {
     public class SocketListener
     {

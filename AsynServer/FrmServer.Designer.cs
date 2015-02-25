@@ -212,6 +212,7 @@
 			this.Name = "FrmServer";
 			this.Padding = new System.Windows.Forms.Padding(2);
 			this.Text = "Server - TCP Socket based Communication";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmServer_FormClosing);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.panel1.ResumeLayout(false);

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Aviad.Utils.Communication.Core;
+using Communication.Core;
 using System.Net.Sockets;
 using System.Threading;
 using System.Net;
