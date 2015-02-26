@@ -10,6 +10,7 @@ using Communication.Core;
 using System.Net.Sockets;
 using System.Threading;
 using System.Net;
+using Communication.Core.Sockets;
 
 namespace AsynServer
 {
@@ -69,7 +70,7 @@ namespace AsynServer
 			PublishMessage(listMessages, message);
 
 			// Send Echo
-			m_serverTerminal.SendMessage("Echo: " + message);
+			m_serverTerminal.SendMessage("Echo: " + message, socket.RemoteEndPoint);
 		}
 
 		private void createTerminal(int alPort)
