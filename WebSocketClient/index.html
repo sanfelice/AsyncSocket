@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>tornado WebSocket example</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>tornado WebSocket example</h1>
+    <hr>
+      WebSocket example
+    <hr>
+    <button id="mybtn">Talk websocket</button> 
+      
+  <script>
+    $(document).ready(function () 
+    {
+        try
+        {
+		  //var ws=new WebSocket("ws://localhost:8888/ws");
+		  //var ws=new WebSocket("ws://localhost:8181/service");
+		  var ws=new WebSocket("ws://127.0.0.1:8222/service");
+		  
+        }
+        catch(exception)
+        {
+            console.log(exception.message);
+            return;
+        }
+
+		ws.onopen = function () {
+			console.log("websocket opened");
+		};
+
+		ws.onmessage = function(evt){
+			//the received content is in evt.data, set it where you want
+			console.log(evt.data);
+		};
+
+		ws.onclose = function () {
+			console.log("connection closed");
+		};
+
+		$("#mybtn").click(function()
+		{
+			try
+			{
+				var r = ws.send("Button Clicked");
+			}
+			catch(exception)
+			{
+				console.log(exception.message);
+			}
+		});
+
+	});
+  </script>
+</body>
+</html>
